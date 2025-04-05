@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 from pickle import load
 
 app = Flask(__name__)
-model = load(open("/workspaces/flask_fm/models/decision_tree_classifier_default_42.sav", "rb"))
+model = load(open("/workspaces/flask_fm/src/models/decision_tree_classifier_default_42.sav", "rb"))
 class_dict = {
     "0": "No tiene diabetes",
     "1": "Tiene Diabetes"
