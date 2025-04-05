@@ -1,8 +1,12 @@
+import os
 from flask import Flask, request, render_template
 from pickle import load
 
 app = Flask(__name__)
-model = load(open("/workspaces/flask_fm/src/models/decision_tree_classifier_default_42.sav", "rb"))
+ruta_base = os.path.dirname(__file__)  # te da la ruta absoluta del archivo actual
+ruta_modelo = os.path.join(ruta_base, "models", "decision_tree_classifier_default_42.sav")
+# model = load(open("/workspaces/flask_fm/src/models/decision_tree_classifier_default_42.sav", "rb"))
+model = load(open(ruta_modelo, "rb"))
 class_dict = {
     "0": "No tiene diabetes",
     "1": "Tiene Diabetes"
