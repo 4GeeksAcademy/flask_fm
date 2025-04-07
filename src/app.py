@@ -32,3 +32,4 @@ def index():
         pred_class = None
     
     return render_template("index.html", prediction = pred_class)
+# https://flask-fm-2.onrender.com/
